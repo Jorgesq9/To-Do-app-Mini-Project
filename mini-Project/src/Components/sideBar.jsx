@@ -1,8 +1,11 @@
-const Sidebar = () => {
+
+const Sidebar = ({changePage}) => {
+
+  
   return (
     <div className="Sidebar">
-      <link to="/">Home</link>
-      <link to="/about">About</link>
+     <a href="/Home" onClick={ () => changePage ('Home')}>Home</a>
+     <a href="/About" onClick={ () => changePage ('About')}>About</a>
     </div>
   );
 };
