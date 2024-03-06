@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 
 const Sidebar = ({changePage}) => {
 
   
   return (
     <div className="Sidebar">
-     <a href="/Home" onClick={ () => changePage ('Home')}>Home</a>
-     <a href="/About" onClick={ () => changePage ('About')}>About</a>
+     
+     <Link to="/"><button>Home</button></Link>
+     <Link to="about"><button>About</button></Link>
     </div>
   );
 };

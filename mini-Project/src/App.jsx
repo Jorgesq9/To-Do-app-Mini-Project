@@ -1,12 +1,16 @@
 import { useState } from "react";
 import "./App.css";
 import "./index.css";
+
+import { Routes, Route} from "react-router-dom"
 import Navbar from "./Components/navBar";
 import Footer from "./Components/footer";
 import Sidebar from "./Components/sideBar";
-import Home from "./Components/Home";
-import About from "./Components/About"
+import Home from "./Pages/Home";
+import About from "./Pages/About"
 import Tasklist from "./Components/TaskList";
+import NotFound from "./Pages/NotFound"
+import ItemsDetails from "./Pages/ItemDetails";
 
 function App() {
 
@@ -22,12 +26,16 @@ function App() {
         <Navbar appName="Timecraft" />
       </div>
       <div className="SideBar">
-        <Sidebar changePage={changePage}/>
-        {currentPage === "Home" && <Home />}
-        {currentPage === "About" && <About />}
-      </div>
+        <Sidebar />
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="about" element={<About />} />
+          <Route path="/ItemsDetails/:itemId"element={<ItemsDetails />}/>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      
       <section id = "toDo">
-      <Tasklist />
       </section>
       <Footer />
     </>
