@@ -2,10 +2,13 @@
 import ListElement from './ListElement'
 import { Link } from 'react-router-dom'
 
+
 const List = ({tasks, onDelete}) => {
-    const handleClick = (event, taskId) => {
-        // Prevent the click event from propagating to the parent (List) component
+    const handleClick = (taskId, event) => {
         event.stopPropagation();
+        event.preventDefault();
+        
+        
         onDelete(taskId);
       };
     return (
@@ -20,7 +23,7 @@ const List = ({tasks, onDelete}) => {
 
             <ListElement task={task} />
             </Link>
-            <button className='deleteButton' onClick={(event) => handleClick (event, task.id)}>Delete</button>
+            <button className='deleteButton' onClick={(event) => handleClick (task.id, event)}>Delete</button>
             </li>
         ))}
 

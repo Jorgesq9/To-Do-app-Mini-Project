@@ -1,6 +1,12 @@
+
+
 #root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 30% 0 30%;
+  min-height: 100vh;
 }
 
 .card {
@@ -38,33 +44,45 @@
 
 .NavBar {
   display: flex;
-  justify-content: flex-start;
-  padding: 0 0 0 25px;
+  justify-content: center;
+  padding: 1rem 0 0 0;
   flex-wrap: wrap;
   align-items: center;
   background-color: #535bf2;
+  border-radius: 8px 8px 0 0;
 }
 
 Footer {
+  margin-top: auto;
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: center;
+  flex-direction: column;
   background-color: #535bf2;
+  bottom: 0;
+  padding: 0rem;
+  width: 40%;
+  border-radius: 0 0 8px 8px;
+  position: fixed;
 }
 
 .Sidebar {
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   background-color: #535bf2;
-  padding: 0 75px 0 75px;
-  justify-content: space-between;
+  padding: 0 15%;
+  justify-content: center;
 }
 
-section {
+#toDo {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #333333;
+  height: 100%;
+  padding: 0 0 25% 0;
+  margin: 0 ;
 }
 
 .taskImg {
@@ -76,4 +94,46 @@ height: 25px;
 text-align: center;
 align-items: center;
 background-color: #8091f2;
+justify-content: center;
+}
+
+
+#notFoundFour {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.notFoundImg {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+#aboutUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Adjust the width based on your design */
+  max-width: 450px; /* Limit the maximum width */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px; /* Add padding as needed */
+}
+
+.homeButton {
+  padding: 0 100px 20px 0px;
+  background-color: #535bf2;
+  border: none;
+}
+
+.aboutButton {
+  padding: 0 100px 20px 0px;
+  background-color: #535bf2;
+  border: none;
+}
+
+#itemsDetails {
+
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import completedImg from '../assets/heavy_check_mark.png';
 import toDoImg from '../assets/x.png';
 
-const ListElement = ({ task, onDelete}) => {
+const ListElement = ({ task }) => {
     const imageSrc = task.completed ? completedImg : toDoImg
 
     

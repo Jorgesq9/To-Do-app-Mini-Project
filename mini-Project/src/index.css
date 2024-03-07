@@ -24,9 +24,11 @@ a:hover {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
-  padding: 0;
-  width: 100%;
+  background-color: #213547;
 }
 
 h1 {
@@ -50,3 +52,4 @@ h2 {
     background-color: #f9f9f9;
   }
 }
+

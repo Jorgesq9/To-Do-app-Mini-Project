@@ -1,23 +1,15 @@
 
 import React, {useState} from 'react'
-import TaskList from "../assets/Tasks.json"
+import useTasks from './useTasks';
 import List from "./List"
 
 
 const Tasklist = () => {
-    const [tasks, setTasks] = useState(TaskList);
-
-    const deleteButton = (taskId) => {
-
-        const updatedTasks = tasks.filter((task) => task.id !== taskId)
-        setTasks(updatedTasks)
-
-    }
+    const { tasks, onDelete, addTask } = useTasks();
     
-
     return (
-
-    <List tasks={tasks} onDelete={deleteButton} />
+        <List tasks={tasks} onDelete={onDelete} addTask={addTask}/>
     )
 };
- export default Tasklist
+
+export default Tasklist

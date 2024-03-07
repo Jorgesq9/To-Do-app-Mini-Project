@@ -1,10 +1,11 @@
 import Tasklist from "../Components/TaskList";
+import AddTaskForm from "../Components/AddTaskForm";
 
-const Home = () => {
+const Home = (tasks, onDelete) => {
   return (
     <div>
       <h3>Home</h3>
-      <Tasklist/>
+      <Tasklist tasks={tasks} onDelete={onDelete} />
     </div>
   );
 };
