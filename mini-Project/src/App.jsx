@@ -11,15 +11,10 @@ import About from "./Pages/About"
 import Tasklist from "./Components/TaskList";
 import NotFound from "./Pages/NotFound"
 import ItemsDetails from "./Pages/ItemDetails";
-import AddTaskForm from "./Components/AddTaskForm"
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("home")
-  const [tasks, setTasks] = useState([]);
 
-  const addTask = (text) => {
-    setTasks((prevTasks) => [...prevTasks, { id: Date.now(), text }]);
-  };
+  const [currentPage, setCurrentPage] = useState("home")
 
   const changePage = (page) => {
     setCurrentPage(page)
@@ -33,16 +28,15 @@ function App() {
       <div className="SideBar">
         <Sidebar />
         </div>
-        <section id = "toDo">
-          <AddTaskForm addTask={addTask}/>
-
-          <Routes>
-            <Route path="/" element={<Home  />}/>
-            <Route path="about" element={<About />} />
-            <Route path="/ItemsDetails/:itemId"element={<ItemsDetails />}/>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </section>
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="about" element={<About />} />
+          <Route path="/ItemsDetails/:itemId"element={<ItemsDetails />}/>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      
+      <section id = "toDo">
+      </section>
       <Footer />
     </>
   );

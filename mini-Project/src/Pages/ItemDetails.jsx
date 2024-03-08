@@ -17,11 +17,9 @@ import { useParams } from "react-router-dom";
         <div>
 
             <h2>Item Details</h2>
-            <section id="itemsDetails">
             <p>Item Id: {itemId}</p>
             <p>Description: {selectedItem.task}</p>
             <p>Completed: {selectedItem.completed ? "Yes" : "No"}</p>
-            </section>
         </div>
     )
 }

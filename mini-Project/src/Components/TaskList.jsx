@@ -1,15 +1,16 @@
 
 import React, {useState} from 'react'
-import useTasks from './useTasks';
+import TaskList from "../assets/Tasks.json"
 import List from "./List"
 
 
-const Tasklist = () => {
-    const { tasks, onDelete, addTask } = useTasks();
-    
+const Tasklist = ({ tasks, onDelete }) => {
     return (
-        <List tasks={tasks} onDelete={onDelete} addTask={addTask}/>
-    )
-};
-
-export default Tasklist
+      <div>
+        <h3>Tasklist</h3>
+        <List tasks={tasks} onDelete={onDelete} />
+      </div>
+    );
+  };
+  
+  export default Tasklist;

@@ -1,36 +1,31 @@
 
 import ListElement from './ListElement'
-import { Link } from 'react-router-dom'
+import { Link, } from 'react-router-dom'
+import Task from "../assets/Tasks.json"
+import React from "react";
 
-
-const List = ({tasks, onDelete}) => {
+const List = ({ tasks, onDelete }) => {
     const handleClick = (taskId, event) => {
         event.stopPropagation();
         event.preventDefault();
         
         
         onDelete(taskId);
-      };
+    }
     return (
-        <div>
-
-        <h2>Task List</h2>
-        <ul>
-
-        {tasks && tasks.map((task) => (
+      <ul>
+        {tasks.map((task) => (
             <li key={task.id}>
-            <Link to={`/ItemsDetails/${task.id}`}>
-
-            <ListElement task={task} />
+          <Link to={`/ItemsDetails/${task.id}`}>
+          <ListElement task={task} />
             </Link>
             <button className='deleteButton' onClick={(event) => handleClick (task.id, event)}>Delete</button>
-            </li>
+          </li>
         ))}
-
-        </ul>
-        </div>
-    )
-}
-
-export default List
+        
+      </ul>
+    );
+  };
+  
+  export default List;
 
