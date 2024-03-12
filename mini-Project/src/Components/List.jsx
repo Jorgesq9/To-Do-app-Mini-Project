@@ -25,7 +25,7 @@ const List = ({ tasks, onDelete, onEdit }) => {
           <Link to={`/ItemsDetails/${task.id}`}>
             <ListElement task={task} />
           </Link>
-          <button onClick={() => handleEditClick(task)}>Edit</button>
+          <button className='editButton'onClick={() => handleEditClick(task)}>Edit</button>
           <button className='deleteButton' onClick={(event) => handleClick(task.id, event)}>
             Delete
           </button>

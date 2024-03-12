@@ -6,8 +6,9 @@ const Sidebar = ({changePage}) => {
   return (
     <div className="Sidebar">
      
-     <Link to="/"><button>Home</button></Link>
-     <Link to="about"><button>About</button></Link>
+     <Link to="/"><button className="homeButton">Home</button></Link>
+     <div className= "sideBarLines">|      |</div>
+     <Link to="about"><button className="aboutButton">About</button></Link>
     </div>
   );
 };

@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <footer>
       <p>© 2024 Timecraft. All rights reserved.</p>
-      <p>
+      <p className="footerText">
         View the source code on{" "}
         <a href={githubRepo} target="_blank" rel="noopener noreferrer">
           GitHub Repo

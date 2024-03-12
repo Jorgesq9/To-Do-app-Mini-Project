@@ -25,7 +25,7 @@ function App() {
       <div className="NavBar">
         <Navbar appName="Timecraft" />
       </div>
-      <div className="SideBar">
+      <div className="sideBar">
         <Sidebar />
         </div>
         <Routes>

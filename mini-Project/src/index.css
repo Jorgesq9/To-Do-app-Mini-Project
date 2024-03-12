@@ -14,6 +14,10 @@
   font-style: normal;
 }
 
+ul {
+  list-style-type: none;
+}
+
 a {
   font-weight: 500;
   color: #ffffff;
@@ -29,6 +33,9 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: #213547;
+  font-size: 20px;
+  justify-content: center;
+  width: 100%;
 }
 
 h1 {
@@ -38,6 +45,20 @@ h1 {
 
 h2 {
   text-align: center;
+}
+
+h3{
+  font-size:32px;
+  margin: 25px;
+}
+
+.notFound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
 }
 
 @media (prefers-color-scheme: light) {

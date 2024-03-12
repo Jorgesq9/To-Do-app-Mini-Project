@@ -1,6 +1,6 @@
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import List from "../Components/List";
 import EditTaskForm from "../Components/EditTask";
@@ -11,6 +11,16 @@ const Home = () => {
   const [completed, setCompleted] = useState(false);
   const [task, setTask] = useState(Task);
   const [taskToUpdate, setTaskToUpdate] = useState(null);
+  
+  // const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  // const [tasks, setTasks] = useState(storedTasks);
+
+  // useEffect(() => {
+  //   console.log("Storage tasks: ", tasks);
+  //   localStorage.setItem("tasks", JSON.stringify(tasks));
+  // }, [tasks]);
+
+  
 
   const addTaskToList = (event) => {
     event.preventDefault();
@@ -20,7 +30,7 @@ const Home = () => {
       task: addTask,
       completed: completed,
     };
-
+    console.log("New task", newTask);
     setTask((prevTask) => [...prevTask, newTask]);
     setAddTask("");
     setCompleted(false);
@@ -48,14 +58,14 @@ const Home = () => {
       {taskToUpdate && (
         <EditTaskForm task={taskToUpdate} onUpdate={handleTaskUpdate} />
       )}
-      <div>
-        <form onSubmit={addTaskToList}>
-          <label>
+      <div className="addTask">
+        <form  className="inputTask" onSubmit={addTaskToList}>
+          <label className="inputTask">
             Add a Task
             <input
               name="addTask"
               type="text"
-              placeholder="Add a Task"
+              placeholder="Add a Task  "
               value={addTask}
               onChange={(event) => setAddTask(event.target.value)}
             />
@@ -68,7 +78,7 @@ const Home = () => {
               onChange={(element) => setCompleted(element.target.checked)}
             />
           </label>
-          <button type="submit">Add a task</button>
+          <button className='addButton'type="submit">Add a task</button>
         </form>
       </div>
     </div>
